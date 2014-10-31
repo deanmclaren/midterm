@@ -6,5 +6,6 @@
 <% @idea.each do |idea| %>
   <h2><%= idea.title %> <small><%= link_to "view idea", idea_path(idea) %></small></h2>
   <p><%= idea.body %></p>
+  Created by: <%= idea.user.email %>
   <hr>
 <% end %>
