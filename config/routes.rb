@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :likes
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -6,6 +8,9 @@ Rails.application.routes.draw do
 
   resources :ideas do
     resources :comments, only: [:create]
+    resources :likes, only: [:create, :destroy]
+
+
   end
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

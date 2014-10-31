@@ -8,6 +8,8 @@
 <h1><%= @idea.title %></h1>
 <p><%= @idea.body %></p>
 
+ <%= button_to "Like", idea_likes_path(@idea), method: :post%>
+
 
 <%= form_for [@idea, Comment.new] do |f| %>
    <%= f.text_area :body %><br>
