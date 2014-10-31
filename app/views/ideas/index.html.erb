@@ -6,6 +6,9 @@
 <% @idea.each do |idea| %>
   <h2><%= idea.title %> <small><%= link_to "view idea", idea_path(idea) %></small></h2>
   <p><%= idea.body %></p>
+    <%= button_to "Like", idea_likes_path(idea), method: :create%>
+   Likes: <%= idea.likes.count %> |
   Created by: <%= idea.user.email %>
+
   <hr>
 <% end %>

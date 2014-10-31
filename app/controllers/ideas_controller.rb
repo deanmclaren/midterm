@@ -20,6 +20,7 @@ class IdeasController < ApplicationController
   def show
     @idea = Idea.find(params[:id])
     @comment = @idea.comments.all
+    @like = current_user.like_for(@idea)
   end
 
   def edit
