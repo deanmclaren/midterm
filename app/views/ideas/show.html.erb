@@ -7,3 +7,14 @@
 </p>
 <h1><%= @idea.title %></h1>
 <p><%= @idea.body %></p>
+
+
+<%= form_for [@idea, Comment.new] do |f| %>
+   <%= f.text_area :body %><br>
+   <%= f.submit %>
+<% end %>
+<hr>
+<% @comment.each do |comment| %>
+  <p><%= comment.body %></p>
+  <hr>
+<% end %>
